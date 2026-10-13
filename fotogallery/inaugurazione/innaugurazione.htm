@@ -9,28 +9,34 @@
 </head>
 <body>
 <h1>Inaugurazione</h1>
-<div id="striscia" data-sale="5b1f0c8e37a94d62a1c07e5d9f3b2846" data-giri="600000">
-	<img data-cifrata="inaugurazione/1.bin" width="403" height="604" alt="" />
-	<img data-cifrata="inaugurazione/2.bin" width="604" height="453" alt="" />
-	<img data-cifrata="inaugurazione/3.bin" width="604" height="453" alt="" />
-	<img data-cifrata="inaugurazione/4.bin" width="604" height="453" alt="" />
-	<img data-cifrata="inaugurazione/5.bin" width="604" height="453" alt="" />
-	<img data-cifrata="inaugurazione/6.bin" width="604" height="453" alt="" />
-	<img data-cifrata="inaugurazione/7.bin" width="604" height="453" alt="" />
-	<img data-cifrata="inaugurazione/8.bin" width="604" height="453" alt="" />
-	<img data-cifrata="inaugurazione/9.bin" width="604" height="453" alt="" />
-	<img data-cifrata="inaugurazione/10.bin" width="604" height="453" alt="" />
-	<img data-cifrata="inaugurazione/11.bin" width="604" height="453" alt="" />
-	<img data-cifrata="inaugurazione/12.bin" width="604" height="453" alt="" />
-	<img data-cifrata="inaugurazione/13.bin" width="604" height="453" alt="" />
-	<img data-cifrata="inaugurazione/14.bin" width="604" height="453" alt="" />
-</div>
 <form id="chiave">
 	<p>Le 14 foto delle serate sono protette: si aprono con la password.</p>
 	<input type="password" name="password" aria-label="Password" autocomplete="current-password" required />
 	<button type="submit">Apri</button>
 	<p id="esito" role="alert"></p>
 </form>
+<div id="striscia" data-sale="5b1f0c8e37a94d62a1c07e5d9f3b2846" data-giri="600000">
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/1.bin" width="403" height="604" alt="" /></div>
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/2.bin" width="604" height="453" alt="" /></div>
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/3.bin" width="604" height="453" alt="" /></div>
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/4.bin" width="604" height="453" alt="" /></div>
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/5.bin" width="604" height="453" alt="" /></div>
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/6.bin" width="604" height="453" alt="" /></div>
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/7.bin" width="604" height="453" alt="" /></div>
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/8.bin" width="604" height="453" alt="" /></div>
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/9.bin" width="604" height="453" alt="" /></div>
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/10.bin" width="604" height="453" alt="" /></div>
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/11.bin" width="604" height="453" alt="" /></div>
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/12.bin" width="604" height="453" alt="" /></div>
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/13.bin" width="604" height="453" alt="" /></div>
+	<div class="foto chiusa"><img data-cifrata="inaugurazione/14.bin" width="604" height="453" alt="" /></div>
+</div>
+<div id="comandi" hidden>
+	<button type="button" id="prima" aria-label="Foto precedente">&#8249;</button>
+	<span id="conta" aria-live="polite"></span>
+	<button type="button" id="pausa"></button>
+	<button type="button" id="dopo" aria-label="Foto successiva">&#8250;</button>
+</div>
 <p class="indietro"><a href="../../foto.htm">Torna alla fotogallery</a></p>
 <script src="../../galleria.js"></script>
 </body>

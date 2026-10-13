@@ -14,26 +14,80 @@ h1 {
 a {
 	color: #cccccc;
 }
+/* una foto per volta: ogni .foto e' larga quanto la striscia, che scorre a scatti */
 #striscia {
 	display: flex;
-	align-items: center;
-	gap: 20px;
+	height: calc(100vh - 210px);
+	height: calc(100svh - 210px);
+	min-height: 240px;
+	margin-top: 14px;
 	overflow-x: auto;
 	scroll-snap-type: x mandatory;
-	padding: 20px;
+	scrollbar-width: none;
+	cursor: pointer;
 }
-#striscia img {
-	flex: none;
+#striscia::-webkit-scrollbar {
+	display: none;
+}
+#striscia[hidden] {
+	display: none;
+}
+.foto {
+	flex: 0 0 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	scroll-snap-align: center;
+	scroll-snap-stop: always;
+}
+/* una foto cifrata non si vede finche' non arriva la password */
+.foto.chiusa {
+	display: none;
+}
+.foto img {
+	box-sizing: border-box;
 	width: auto;
 	height: auto;
-	max-width: calc(100vw - 70px);
-	max-height: calc(100vh - 170px);
+	max-width: calc(100% - 16px);
+	max-height: 100%;
 	border: 15px solid #ffffff;
-	scroll-snap-align: center;
+	box-shadow: 0 6px 24px rgba(0, 0, 0, 0.6);
 }
-/* una foto cifrata non ha src finche' non arriva la password */
-#striscia img:not([src]) {
+#comandi {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 14px;
+	margin: 14px 0 0;
+}
+#comandi[hidden] {
 	display: none;
+}
+#comandi button {
+	width: 46px;
+	height: 46px;
+	border: 1px solid #f08a4b;
+	border-radius: 50%;
+	background-color: #c8620e;
+	color: #ffffff;
+	font-size: 26px;
+	line-height: 1;
+	cursor: pointer;
+}
+#comandi #pausa {
+	font-size: 14px;
+}
+#comandi button:hover {
+	background-color: #e07a1c;
+}
+#conta {
+	min-width: 64px;
+	color: #cccccc;
+}
+@media (max-width: 700px) {
+	.foto img {
+		border-width: 8px;
+	}
 }
 #chiave {
 	margin: 20px auto;
