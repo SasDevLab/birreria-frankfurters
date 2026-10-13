@@ -43,3 +43,23 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+/* Il link d'ingresso sotto l'intro: stessi colori e carattere dei pulsanti del menu, piu' grande. */
+a.ingresso, a.ingresso:link, a.ingresso:visited {
+	display: inline-block;
+	margin-top: 10px;
+	padding: 10px 34px;
+	border: 1px solid #f08a4b;
+	border-left: 14px solid #6b1e04;
+	border-right: 14px solid #6b1e04;
+	border-radius: 8px 0 12px 0;
+	background-color: #c8620e;
+	color: #ffffff;
+	font-family: Georgia, serif;
+	font-size: 22px;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 #5a1a00;
+}
+a.ingresso:hover {
+	background-color: #e07a1c;
+}
