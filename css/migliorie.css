@@ -1,0 +1,83 @@
+/* Migliorie del 13/10/2026: il sito "meno vecchio". Una per blocco:
+   per toglierne una si cancella il suo blocco;
+   per toglierle tutte si leva la riga di migliorie.css in converti.py (tag restauro-fedele). */
+
+/* 1. Testo piu' grande e arioso (era 12 punti) */
+.pagina { font-family: Verdana, Tahoma, "Segoe UI", system-ui, sans-serif; font-size: 15px; line-height: 1.6; color: #333; }
+.pagina .sottotitolo { font-size: 12px; line-height: 1.4; }
+
+/* 2. La pagina come una scheda: piu' larga, staccata dall'alto, ombra morbida, angoli arrotondati */
+.pagina .tabella { width: 860px; max-width: 100%; margin-top: 28px; margin-bottom: 40px; border: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 12px 44px rgba(0, 0, 0, 0.45); }
+.pagina .tabella > tbody > tr:first-child > td { text-align: center; line-height: 0; }
+.pagina .tabella > tbody > tr:nth-child(2) > td { padding: 14px 18px 18px 6px; }
+.pagina .tabella > tbody > tr:nth-child(2) > td:first-child:not(:last-child) { padding-right: 6px; }
+.pagina .sottotitolo { border-top: 1px solid #eee; padding: 0 12px; }
+
+/* 3. Menu vivo: pulsanti piu' grandi, che si accendono e scivolano al passaggio */
+.pagina a.pulsante { width: 132px; height: 30px; line-height: 26px; font-size: 15px; margin-bottom: 4px; transition: background-color 0.2s, transform 0.2s; }
+.pagina a.pulsante:hover { transform: translateX(3px); }
+.p-home a.pulsante[href="home.htm"], .p-birre a.pulsante[href="birre.htm"], .p-menu a.pulsante[href="menu.htm"],
+.p-foto a.pulsante[href="foto.htm"], .p-dove_siamo a.pulsante[href="dove_siamo.htm"], .p-contattaci a.pulsante[href="contattaci.htm"],
+.p-newsletter a.pulsante[href="newsletter.htm"] { background-color: #8a3a06; }
+
+/* 4. L'insegna entra in dissolvenza; solo in home, e non per chi ha chiesto meno movimento */
+@media (prefers-reduced-motion: no-preference) {
+	.p-home .tabella img[src*="banner"] { animation: entra-insegna 1.4s ease-out both; }
+	@keyframes entra-insegna { from { opacity: 0; } to { opacity: 1; } }
+}
+
+/* 5. Titoli: tutti al centro (ognuno aveva un margine messo a occhio), con la riga arancione sotto */
+.pagina h1.titolo { margin: 6px 0 22px !important; text-align: center; font-family: Georgia, serif; font-size: 28px; font-weight: normal; }
+.pagina h1.titolo::after { content: ""; display: block; width: 70px; height: 3px; margin: 8px auto 0; background-color: #c8620e; }
+
+/* 6. Le birre: ogni bottiglia e' una scheda che si solleva, con il nome sotto */
+.p-birre .tabella table { margin: 0 auto; }
+.p-birre .tabella table td { width: 112px; height: auto; padding: 12px 6px; border-radius: 10px; vertical-align: bottom; transition: transform 0.2s, box-shadow 0.2s; }
+.p-birre .tabella table td:hover { transform: translateY(-4px); box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18); }
+.p-birre .tabella table a { display: block; color: #8a3a06; font-size: 13px; line-height: 1.3; text-decoration: none; }
+.p-birre .tabella table img { display: block; margin: 0 auto 8px !important; }
+.p-birre .tabella table br { display: none; }
+/* la scheda di una birra: bottiglia in alto a sinistra, voci in marrone e in grassetto, una per riga
+   (gli a capo erano messi a mano per la colonna stretta del 2009) */
+.birra .tabella table, .birra .tabella div { float: none; margin-left: 0 !important; }
+.birra .tabella table td { vertical-align: top; }
+.birra .tabella table td:last-child { padding-left: 24px; }
+.birra .tabella table p { margin: 0 !important; }
+.birra .tabella table img { max-width: none; }
+.birra .tabella table br { display: none; }
+.birra .Stile1 { color: #8a3a06; font-weight: bold; }
+.birra .Stile1:not(:first-child)::before { content: "\A"; white-space: pre; }
+
+/* 7. Fotografie, mappe e locandine: angoli morbidi e ombra; le copertine delle gallerie si avvicinano al passaggio */
+.pagina .tabella > tbody > tr:nth-child(2) img:not([src*="facebook"]):not([src*="Birre/"]):not([src$=".gif"]):not([src$=".png"]) { border: 0; border-radius: 8px; box-shadow: 0 3px 12px rgba(0, 0, 0, 0.22); }
+.p-foto .tabella table { margin: 0 auto !important; }
+.p-foto .tabella table img { transition: transform 0.2s, box-shadow 0.2s; }
+.p-foto .tabella table a:hover img { transform: scale(1.06); box-shadow: 0 8px 22px rgba(0, 0, 0, 0.3) !important; }
+.p-foto .tabella table a { color: #8a3a06 !important; }
+.pagina .tabella p a { color: #8a3a06; }
+
+/* 8. Sul telefono: il menu passa sopra, in riga, e il testo prende tutta la larghezza */
+@media (max-width: 700px) {
+	.pagina .tabella { margin-top: 0; margin-bottom: 0; border-radius: 0; }
+	.pagina .tabella, .pagina .tabella > tbody, .pagina .tabella > tbody > tr, .pagina .tabella > tbody > tr > td { display: block; width: auto !important; }
+	.pagina .tabella > tbody > tr:nth-child(2) > td { padding: 10px 14px 16px; }
+	.pagina .tabella > tbody > tr:nth-child(2) > td:first-child:not(:last-child) { padding: 10px 8px 0; text-align: center; }
+	.pagina .tabella > tbody > tr:nth-child(2) > td:first-child:not(:last-child) br { display: none; }
+	.pagina a.pulsante { display: inline-block; width: auto; min-width: 96px; padding: 0 8px; margin: 3px 2px; }
+	.pagina a.pulsante:hover { transform: none; }
+	.pagina a[href*="facebook"] { margin-left: 6px !important; vertical-align: middle; }
+	/* le tabelle interne erano allineate a sinistra (flottanti): il piede di pagina ci finiva accanto */
+	.pagina .tabella > tbody > tr:nth-child(2) > td { display: flow-root; }
+	.p-home .tabella p br { display: none; }
+	/* tabelle interne (birre, scheda, mappa): le celle vanno a capo invece di uscire dallo schermo */
+	.pagina .tabella table, .pagina .tabella table tbody, .pagina .tabella table tr { display: block; margin-left: 0 !important; }
+	.pagina .tabella table td { display: inline-block; }
+	.p-birre .tabella table tbody { text-align: center; }
+	.p-birre .tabella table tr { display: contents; }
+	.p-birre .tabella table td { width: 98px; padding: 10px 3px; }
+	.p-foto .tabella table td:empty { display: none; }
+	.birra .tabella table td { display: block; text-align: center; }
+	.birra .tabella table td:last-child { padding: 12px 0 0; text-align: left; }
+	.birra .tabella table img { max-width: 100%; }
+	.pagina .tabella p[style] { margin-left: 0 !important; }
+}
