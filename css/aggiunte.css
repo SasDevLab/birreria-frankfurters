@@ -1,0 +1,45 @@
+/* Correzioni del restauro: cio' che nel 2009 faceva Flash, e il minimo perche' si legga su un telefono. */
+
+/* I pulsanti del menu erano Flash di Dreamweaver ("Corporate-Orange", 105x23, Georgia): ridisegnati da una resa con Ruffle. */
+a.pulsante, a.pulsante:link, a.pulsante:visited {
+	display: block;
+	box-sizing: border-box;
+	width: 105px;
+	height: 23px;
+	line-height: 19px;
+	margin-left: 5px;
+	border: 1px solid #f08a4b;
+	border-left: 7px solid #6b1e04;
+	border-right: 7px solid #6b1e04;
+	border-radius: 4px 0 6px 0;
+	background-color: #c8620e;
+	color: #ffffff;
+	font-family: Georgia, serif;
+	font-size: 13px;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: 1px 1px 0 #5a1a00;
+}
+a.pulsante:hover {
+	background-color: #e07a1c;
+}
+/* nell'originale fra un pulsante e l'altro c'era un <br />: con i blocchi raddoppierebbe lo spazio */
+a.pulsante + br {
+	display: none;
+}
+
+.intro-video {
+	width: 640px;
+	max-width: 100%;
+	height: auto;
+}
+
+.spento {
+	color: #999999;
+	font-style: italic;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}

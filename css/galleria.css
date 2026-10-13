@@ -1,0 +1,48 @@
+/* La galleria rifatta in HTML: sfondo e cornice bianca sono quelli dell'AutoViewer (gallery.xml: frameWidth 15). */
+body {
+	margin: 0;
+	background-color: #181818;
+	color: #ffffff;
+	font-family: sans-serif;
+	text-align: center;
+}
+h1 {
+	font-size: 20px;
+	font-weight: normal;
+	margin: 16px 0 0;
+}
+a {
+	color: #cccccc;
+}
+#striscia {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	padding: 20px;
+}
+#striscia img {
+	flex: none;
+	width: auto;
+	height: auto;
+	max-width: calc(100vw - 70px);
+	max-height: calc(100vh - 170px);
+	border: 15px solid #ffffff;
+	scroll-snap-align: center;
+}
+/* una foto cifrata non ha src finche' non arriva la password */
+#striscia img:not([src]) {
+	display: none;
+}
+#chiave {
+	margin: 20px auto;
+	padding: 0 20px;
+}
+#chiave input, #chiave button {
+	font-size: 16px;
+	padding: 8px 10px;
+}
+#esito {
+	min-height: 1.2em;
+}

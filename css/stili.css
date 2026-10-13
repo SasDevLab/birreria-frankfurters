@@ -1,0 +1,31 @@
+body {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	background-image: url(../Immagini/legno.jpg);
+	background-repeat:repeat;
+	margin: 0px;
+	padding: 0px;
+}
+
+.tabella {
+	background-color: #FFFFFF;
+	border-top-width: thin;
+	border-right-width: thin;
+	border-bottom-width: thin;
+	border-left-width: thin;
+	border-right-style: groove;
+	border-bottom-style: groove;
+	border-left-style: groove;
+	border-top-color: #919191;
+	border-right-color: #919191;
+	border-bottom-color: #919191;
+	border-left-color: #919191;
+}
+.titolo {
+	font-size: 24px;
+	color: #C69F78;
+}
+.sottotitolo{
+	color:#999999;
+}
+
